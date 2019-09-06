@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "/Users/cgcahe/Desktop/coding/fullstack"
+		},
+		{
+			"path": "/Users/cgcahe/Downloads/TGIF-Vue-master"
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true,
+		"liveServer.settings.port": 5501,
+		"liveServer.settings.multiRootWorkspaceName": "fullstack"
+	}
+}

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--css contents-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="css/index.css">
+  <title>Senate Data | TGIF</title>
+</head>
+
+<body>
+  <header>
+    <div class="navigation">
+      <nav class="navbar fixed-top navbar-expand navbar-dark bd-navbar">
+        <a class="navbar-brand" href="index.html">
+        <img src="img/icon1.svg" width="30" height="30" class="d-inline-block align-top" alt="icon"> Transparent Government in Fact</a>
+      
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Congress 113</a>
+            
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="house-data.html">House</a>
+                <a class="dropdown-item" href="senate-data.html">Senate</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Attendance</a>
+            
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="house-data-attendance.html">House</a>
+                <a class="dropdown-item" href="senate-data-attendance.html">Senate</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Party Loyalty</a>
+            
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="house-data-party-loyalty.html">House</a>
+                <a class="dropdown-item" href="senate-data-party-loyalty.html">Senate</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      
+        <button type="button" class="btn btn-warning">
+          <a href="mailto:info@tgif.net">Contact Us</a>
+        </button>
+      </nav>
+    </div>
+  </header>
+  
+  <div class="container-fluid" id="app">
+    <div class="container-congress-text">
+      <h2 class="congress-text-title">Senators</h2>
+      <img src="img/icon3.svg" alt="magnifier" class="float-right text-body-img">
+      <p class="congress-text-body">First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. The Senate has several exclusive powers not granted to the House, including consenting to treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive officials, military officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.</p>
+    </div>
+
+    <div class="container-filters">
+      <div class="float-left">Filter by Party:
+        <input type="checkbox" name="party-filter" value="D" v-model="checkValues" @change="loadFilteredMembers" checked>Democrat
+        <input type="checkbox" name="party-filter" value="R" v-model="checkValues" @change="loadFilteredMembers" checked>Republican
+        <input type="checkbox" name="party-filter" value="I" v-model="checkValues" @change="loadFilteredMembers" checked>Independent
+      </div>
+      
+      <div class="float-right">Filter by State
+        <select name="state-selector" v-model="selectValue" @change="loadFilteredMembers">
+          <option value="">All</option>
+          <option value="AL">Alabama</option>
+          <option value="AK">Alaska</option>
+          <option value="AZ">Arizona</option>
+          <option value="AR">Arkansas</option>
+          <option value="CA">California</option>
+          <option value="CO">Colorado</option>
+          <option value="CT">Connecticut</option>
+          <option value="DE">Delaware</option>
+          <option value="DC">District of Columbia</option>
+          <option value="FL">Florida</option>
+          <option value="GA">Georgia</option>
+          <option value="HI">Hawaii</option>
+          <option value="ID">Idaho</option>
+          <option value="IL">Illinois</option>
+          <option value="IN">Indiana</option>
+          <option value="IA">Iowa</option>
+          <option value="KS">Kansas</option>
+          <option value="KY">Kentucky</option>
+          <option value="LA">Louisiana</option>
+          <option value="ME">Maine</option>
+          <option value="MD">Maryland</option>
+          <option value="MA">Massachusetts</option>
+          <option value="MI">Michigan</option>
+          <option value="MN">Minnesota</option>
+          <option value="MS">Mississippi</option>
+          <option value="MO">Missouri</option>
+          <option value="MT">Montana</option>
+          <option value="NE">Nebraska</option>
+          <option value="NV">Nevada</option>
+          <option value="NH">New Hampshire</option>
+          <option value="NJ">New Jersey</option>
+          <option value="NM">New Mexico</option>
+          <option value="NY">New York</option>
+          <option value="NC">North Carolina</option>
+          <option value="ND">North Dakota</option>
+          <option value="OH">Ohio</option>
+          <option value="OK">Oklahoma</option>
+          <option value="OR">Oregon</option>
+          <option value="PA">Pennsylvania</option>
+          <option value="RI">Rhode Island</option>
+          <option value="SC">South Carolina</option>
+          <option value="SD">South Dakota</option>
+          <option value="TN">Tennessee</option>
+          <option value="TX">Texas</option>
+          <option value="UT">Utah</option>
+          <option value="VT">Vermont</option>
+          <option value="VA">Virginia</option>
+          <option value="WA">Washington</option>
+          <option value="WV">West Virginia</option>
+          <option value="WI">Wisconsin</option>
+          <option value="WY">Wyoming</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="container-table">
+      <table class="table table-hover" id="congress-table">
+        <thead class="thead-dark">
+          <tr>
+            <th>NAME</th>
+            <th>PARTY</th>
+            <th>STATE</th>
+            <th>SENIORITY (in years)</th>
+            <th>VOTES WITH PARTY (in %)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="member in filteredMembers">
+            <td>
+              <a v-bind:href="member.url">
+                {{getMemberFullName(member)}}
+              </a>
+            </td>
+            <td>{{member.party}}</td>
+            <td>{{member.state}}</td>
+            <td>{{member.seniority}}</td>
+            <td>{{member.votes_with_party_pct}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer class="footer sticky-bottom py-3 text-center">
+    <div class="container">
+      <span class="text-muted">© 2019 TGIF | All Rights Reserved</span>
+    </div>
+  </footer>
+
+  <!--jquery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <!--popper-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <!--bootstrap-->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!--vue js-->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <!--content scripts-->  
+  <script src="scripts/functions.js"></script>
+  <script src="scripts/realtime.js"></script>
+  
+
+</body>
+</html>

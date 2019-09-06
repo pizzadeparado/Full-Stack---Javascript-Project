@@ -1,0 +1,92 @@
+.bd-navbar {
+  background-color: #3755BE;
+  font-family: 'Roboto Slab', serif;
+}
+
+.text-body-img {
+  width: 200px;
+  height: 200px;
+  margin-left: 50px;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.home-text {
+  margin-top: 100px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 50px;
+}
+
+.home-text-title {
+  background: #F18C87;
+  font-family: 'Roboto Slab', serif;
+}
+
+.home-text-body {
+  text-align: justify;
+}
+
+#card-index {
+  margin-left: 50px;
+  background-color: rgb(250, 250, 250);
+}
+
+#card-header-index {
+  background-color: #F18C87;
+  font-family: 'Roboto Slab', serif;
+}
+
+#card-body-index {
+  margin-left: 25px;
+  margin-right: 25px;
+  text-align: justify;
+}
+
+#card-body-more-index {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+#data-tables-loyalty {
+  margin-top: 100px;
+}
+
+.data-header {
+  text-decoration: underline;
+  text-decoration-color: #F18C87;
+  font-family: 'Roboto Slab', serif;
+}
+
+.container-congress-text {
+  margin-top: 100px;
+  margin-left: 50px;
+  margin-right: 50px;
+  text-align: justify;
+}
+
+.congress-text-title {
+  background: #F18C87;
+  font-family: 'Roboto Slab', serif;
+}
+
+.congress-text-body {
+  text-align: justify;
+}
+
+.container-filters {
+  margin-top: 75px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 25px;
+}
+
+.container-table {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.footer {
+  background-color: #1B1F3B;
+  font-family: 'Roboto Slab', serif;
+}
