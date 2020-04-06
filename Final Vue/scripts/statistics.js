@@ -27,11 +27,11 @@ var app = new Vue ({
     
     showParties() {
       this.congressMembersVue.forEach(member => {
-        var showParty = this.parties.find(party => party.name === member.party);
+        var showParty = this.congressMembersVue.find(party => party.name === member.party);
         if (showParty) {
           showParty.membersVue.push(member);
         } else {
-          this.parties.push({
+          this.congressMembersVue.push({
             name: member.party,
             membersVue: [member]
           });
@@ -57,7 +57,7 @@ var app = new Vue ({
     },
     
     getAverageVotesWithParty(partyName) {
-      var showParty = this.parties.find(party => party.name === partyName);
+      var showParty = this.congressMembersVue.find(party => party.name === partyName);
       if (showParty) {
         return Math.round(
           showParty.membersVue
@@ -79,7 +79,7 @@ var app = new Vue ({
       },
       
       getPartyMembers(partyName) {
-        var showParty = this.parties.find(party => party.name === partyName);
+        var showParty = this.congressMembersVue.find(party => party.name === partyName);
         
         if (showParty) {
           return showParty.membersVue;

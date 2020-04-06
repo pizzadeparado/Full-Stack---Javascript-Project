@@ -4,11 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--css contents-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
-  <link rel="stylesheet" href="css/index.css">
   <title>House Data | TGIF</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
@@ -16,8 +15,8 @@
     <div class="navigation">
       <nav class="navbar fixed-top navbar-expand navbar-dark bd-navbar">
         <a class="navbar-brand" href="index.html">
-        <img src="img/icon1.svg" width="30" height="30" class="d-inline-block align-top" alt="icon"> Transparent Government in Fact</a>
-      
+          <img src="img/icon1.svg" width="30" height="30" class="d-inline-block align-top" alt="icon"> Transparent Government in Fact</a>
+
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item active">
@@ -25,7 +24,7 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Congress 113</a>
-            
+
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="house-data.html">House</a>
                 <a class="dropdown-item" href="senate-data.html">Senate</a>
@@ -33,7 +32,7 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Attendance</a>
-            
+
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="house-data-attendance.html">House</a>
                 <a class="dropdown-item" href="senate-data-attendance.html">Senate</a>
@@ -41,7 +40,7 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Party Loyalty</a>
-            
+
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="house-data-party-loyalty.html">House</a>
                 <a class="dropdown-item" href="senate-data-party-loyalty.html">Senate</a>
@@ -49,14 +48,14 @@
             </li>
           </ul>
         </div>
-      
+
         <button type="button" class="btn btn-warning">
           <a href="mailto:info@tgif.net">Contact Us</a>
         </button>
       </nav>
     </div>
   </header>
-  
+
   <div class="container-fluid" id="app">
     <div class="container-congress-text">
       <h2 class="congress-text-title">Congresspeople</h2>
@@ -64,14 +63,14 @@
       <p class="congress-text-body">The major power of the House is to pass federal legislation that affects the entire country, although its bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law (unless both the House and Senate re-pass the legislation with a two-thirds majority in each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached officials are subsequently tried in the Senate), and to elect the U.S. President in case there is no majority in the Electoral College.</p>
       <p class="congress-text-body">Each U.S. state is represented in the House in proportion to its population as measured in the census, but every state is entitled to at least one representative. </p>
     </div>
-      
+
     <div class="container-filters">
       <div class="float-left">Filter by Party:
         <input type="checkbox" name="party-filter" value="D" v-model="checkValues" @change="loadFilteredMembers" checked>Democrat
         <input type="checkbox" name="party-filter" value="R" v-model="checkValues" @change="loadFilteredMembers" checked>Republican
         <input type="checkbox" name="party-filter" value="I" v-model="checkValues" @change="loadFilteredMembers" checked>Independent
       </div>
-      
+
       <div class="float-right">Filter by State:
         <select name="state-selector" v-model="selectValue" @change="loadFilteredMembers">
           <option value="">All</option>
@@ -157,13 +156,13 @@
       </table>
     </div>
   </div>
-  
+
   <footer class="footer sticky-bottom py-3 text-center">
     <div class="footer-container">
       <span class="text-muted">© 2019 TGIF | All Rights Reserved</span>
     </div>
   </footer>
-  
+
   <!--jquery-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <!--popper-->
@@ -171,10 +170,11 @@
   <!--bootstrap-->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <!--vue js-->
-  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-  <!--content scripts-->  
-  <script src="scripts/functions.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!--content scripts-->
   <script src="scripts/realtime.js"></script>
+  <script src="scripts/functions.js"></script>
 
 </body>
+
 </html>
